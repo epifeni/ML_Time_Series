@@ -18,7 +18,7 @@ Complete list of formatting options that you can use both for parsing strings an
 ```
 df = read_csv("data.csv", header=0)
 ```
-* use the index_col option to tell read_csv() which column to use as the index. The index is a special column that contains the labels for the rows
+* Use the index_col option to tell read_csv() which column to use as the index. The index is a special column that contains the labels for the rows
 ```
 df = read_csv("data.csv", index_col="date")
 df.head(4)
@@ -60,7 +60,7 @@ df = pd.DataFrame({'year': [2021, 2022],
 ts1 = pd.to_datetime(df)
 ts2 = pd.to_datetime('20210324', format='%Y%m%d')
 ```
-* rolling window for calculations like this:
+* Rolling window for calculations like this:
 ```
 s = pd.Series([1, 2, 3, 4, 5])
 s.rolling(3).sum()
@@ -71,7 +71,7 @@ import numpy as np
 rng = pd.date_range('2021-03-24', '2021-09-01', freq='D')
 ts = pd.Series(np.random.randn(len(rng)), index=rng)
 ```
-* index these time series datasets like any other pandas Series or DataFrame. ts[:2].index would give us:
+* Index these time series datasets like any other pandas Series or DataFrame. ts[:2].index would give us:
 ```
 DatetimeIndex(['2021-03-24', '2021-03-25'], dtype='datetime64[ns]', freq='D')
 ```
@@ -83,7 +83,7 @@ ts['2021-03-28':'2021-03-30']
 ```
 ts.shift(1)[:5]
 ```
-* change the resolution of time series objects, for example like this:
+* Change the resolution of time series objects, for example like this:
 ```
 ts.asfreq('M')
 ```
@@ -109,7 +109,7 @@ from datetime import timedelta
 year = timedelta(days=365)
 year * 10
 ```
-* converting between different lengths of time like this:
+* Converting between different lengths of time like this:
 ```
 def to_seconds(*args, **kwargs):
     return datetime.timedelta(*args, **kwargs).total_seconds()
