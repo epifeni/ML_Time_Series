@@ -19,4 +19,12 @@ df = read_csv("data.csv", header=0)
 df = read_csv("data.csv", index_col="date")
 df.head(4)
 ```
-
+* Data type
+```
+df.dtypes
+```
+* Use the parse_dates option to tell read_csv()to parse the dates in the index.
+```
+df = read_csv("data.csv", parse_dates=["date"])
+df.dtypes
+```
