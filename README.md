@@ -13,5 +13,5 @@
 * Use the header option to tell read_csv() which row is the header  ``` df = read_csv("data.csv", header=0) ```
 * use the index_col option to tell read_csv() which column to use as the index. The index is a special column that contains the labels for the rows
 ``` df = read_csv("data.csv", index_col="date")
-df.head(4) ```
+df.head(4)
 
