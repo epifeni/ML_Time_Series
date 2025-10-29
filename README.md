@@ -10,8 +10,9 @@
 6. Evaluate the models: This step includes comparing the performance of different models and choosing the best one. It involves assessing the performance of the machine learning model on unseen data. This helps in fine-tuning the model and making it ready for deployment.
 7. Make predictions: This step involves using the final model to make predictions on new data.
 
-* Use the header option to tell read_csv() which row is the header  ``` df = read_csv("data.csv", header=0) ```
+* Use the header option to tell read_csv() which row is the header
+```df = read_csv("data.csv", header=0)```
 * use the index_col option to tell read_csv() which column to use as the index. The index is a special column that contains the labels for the rows
-``` df = read_csv("data.csv", index_col="date")
+```df = read_csv("data.csv", index_col="date")
 df.head(4)
 
