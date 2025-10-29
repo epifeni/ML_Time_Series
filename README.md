@@ -10,7 +10,10 @@
 6. Evaluate the models: This step includes comparing the performance of different models and choosing the best one. It involves assessing the performance of the machine learning model on unseen data. This helps in fine-tuning the model and making it ready for deployment.
 7. Make predictions: This step involves using the final model to make predictions on new data.
 
-# Coperations
+# Common formating operations  
+
+Complete list of formatting options that you can use both for parsing strings and printing datetime objects here: https://strftime.org/  
+
 * Use the header option to tell read_csv() which row is the header
 ```
 df = read_csv("data.csv", header=0)
@@ -84,6 +87,52 @@ ts.shift(1)[:5]
 ```
 ts.asfreq('M')
 ```
+* Working with dates we’ll import them, batteries included:
+```
+from datetime import date
+today = date.today()
+other_date = date(2021, 3, 24)
+```
+* Datetime object (a timestamp) instead, we can do this as well:
+```
+from datetime import datetime
+now = datetime.now()
+```
+* Create a datetime for a specific date and time as well:
+```
+some_date = datetime(2021, 5, 18, 15, 39, 0)
+some_date.isoformat()
+```
+* Time differences using timedelta:
+```
+from datetime import timedelta 
+year = timedelta(days=365)
+year * 10
+```
+* converting between different lengths of time like this:
+```
+def to_seconds(*args, **kwargs):
+    return datetime.timedelta(*args, **kwargs).total_seconds()
+```
+* Parse string inputs to date and datetime types and output these objects as string:
+```
+from datetime import date
+some_date = date.fromisoformat('2021-03-24')
+```
+OR
+```
+some_date = datetime.date(2021, 3, 24)
+```
+* Format the output with string format options, for example like this:
+```
+  some_date.strftime('%A %d. %B %Y')
+```
+* Read in a date or datetime object from a string, and we can use the same format options:
+```
+from datetime import datetime
+dt = datetime.strptime('24/03/21 15:48', '%d/%m/%y %H:%M')
+```
+
 
 
 
